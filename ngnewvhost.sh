@@ -24,8 +24,8 @@ server {
         fastcgi_param  SCRIPT_FILENAME  /var/www/$1/public\$fastcgi_script_name;
     }
 }
-" >> /etc/nginx/sites-available/$i
+" >> /etc/nginx/sites-available/$1
 
 echo "Enabling site and restarting nginx ..."
-	ln -s /etc/nginx/sites-available/$i /etc/nginx/sites-enabled/$1
+	ln -s /etc/nginx/sites-available/$1 /etc/nginx/sites-enabled/$1
 	/etc/init.d/nginx restart
